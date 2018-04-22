@@ -1,19 +1,25 @@
 'use strict'
 
 {app, BrowserWindow, globalShortcut, session} = require 'electron'
+log = require 'electron-log'
 {autoUpdater} = require 'electron-updater'
+
+autoUpdater.logger = log
+autoUpdater.logger.transports.file.level = 'info'
+log.info 'App starting...'
+
 autoUpdater.on 'checking-for-update', ->
-  console.log 'checking for update'
+  log.info 'checking for update'
 autoUpdater.on 'update-available', ->
-  console.log 'update-available'
+  log.info 'update-available'
 autoUpdater.on 'update-not-available', ->
-  console.log 'update-not-available'
+  log.info 'update-not-available'
 autoUpdater.on 'error', ->
-  console.log 'error'
+  log.info 'error'
 autoUpdater.on 'download-progress', ->
-  console.log 'download-progress'
+  log.info 'download-progress'
 autoUpdater.on 'update-downloaded', ->
-  console.log 'update-downloaded'
+  log.info 'update-downloaded'
 
 
 mainWindow = null
@@ -26,6 +32,7 @@ tests = [
   /video_ads/
 ]
 createWindow = ->
+  autoUpdater.checkForUpdatesAndNotify()
   mode = 'youtube'
   ret = globalShortcut.register 'CommandOrControl+Shift+Q', ->
     app.quit()

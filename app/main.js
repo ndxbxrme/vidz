@@ -1,33 +1,41 @@
 (function() {
   'use strict';
-  var BrowserWindow, app, autoUpdater, createWindow, globalShortcut, mainWindow, session, tests;
+  var BrowserWindow, app, autoUpdater, createWindow, globalShortcut, log, mainWindow, session, tests;
 
   ({app, BrowserWindow, globalShortcut, session} = require('electron'));
 
+  log = require('electron-log');
+
   ({autoUpdater} = require('electron-updater'));
 
+  autoUpdater.logger = log;
+
+  autoUpdater.logger.transports.file.level = 'info';
+
+  log.info('App starting...');
+
   autoUpdater.on('checking-for-update', function() {
-    return console.log('checking for update');
+    return log.info('checking for update');
   });
 
   autoUpdater.on('update-available', function() {
-    return console.log('update-available');
+    return log.info('update-available');
   });
 
   autoUpdater.on('update-not-available', function() {
-    return console.log('update-not-available');
+    return log.info('update-not-available');
   });
 
   autoUpdater.on('error', function() {
-    return console.log('error');
+    return log.info('error');
   });
 
   autoUpdater.on('download-progress', function() {
-    return console.log('download-progress');
+    return log.info('download-progress');
   });
 
   autoUpdater.on('update-downloaded', function() {
-    return console.log('update-downloaded');
+    return log.info('update-downloaded');
   });
 
   mainWindow = null;
@@ -36,6 +44,7 @@
 
   createWindow = function() {
     var mode, ret;
+    autoUpdater.checkForUpdatesAndNotify();
     mode = 'youtube';
     ret = globalShortcut.register('CommandOrControl+Shift+Q', function() {
       return app.quit();

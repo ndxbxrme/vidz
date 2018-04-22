@@ -1,6 +1,6 @@
 {
   "name": "vidz",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "description": "testing electron with youtube and twitch",
   "main": "app/main.js",
   "scripts": {
@@ -32,6 +32,7 @@
     "load-grunt-tasks": "^3.5.2"
   },
   "dependencies": {
+    "electron-log": "^2.2.14",
     "electron-updater": "^2.21.8"
   }
 }
