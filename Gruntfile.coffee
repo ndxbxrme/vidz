@@ -4,7 +4,7 @@ module.exports = (grunt) ->
     express:
       web:
         options:
-          script: 'build/test.js'
+          script: 'app/test.js'
     watch:
       coffee:
         files: ['src/**/*.coffee']
@@ -17,7 +17,7 @@ module.exports = (grunt) ->
           expand: true
           cwd: 'src'
           src: ['**/*.coffee']
-          dest: 'build'
+          dest: 'app'
           ext: '.js'
         }]
     pug:
@@ -30,15 +30,26 @@ module.exports = (grunt) ->
           expand: true
           cwd: 'src'
           src: ['**/*.pug']
-          dest: 'build'
+          dest: 'app'
           ext: '.html'
         ]
+    copy:
+      build:
+        files: [
+          expand: true
+          cwd: 'files'
+          dest: 'build'
+          src: [
+            '**/*.*'
+          ]
+        ]
     clean:
-      build: 'build'
+      build: 'app'
     nodeunit:
       tests: ['build/test/**/*.js']
   grunt.registerTask 'build', [
     'clean:build'
+    'copy:build'
     'coffee'
     'pug'
   ]

@@ -1,12 +1,16 @@
 {
   "name": "vidz",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "testing electron with youtube and twitch",
-  "main": "build/main.js",
+  "main": "app/main.js",
   "scripts": {
-    "start": "electron ."
+    "start": "electron .",
+    "pack": "build --dir"
   },
-  "loadOrder": 5,
+  "build": {
+    "appId": "com.ndxbxrme.vidz",
+    "productName": "Vidz"
+  },
   "repository": {
     "type": "git",
     "url": "https://github.com/ndxbxrme/vidz"
@@ -16,10 +20,12 @@
   "homepage": "https://github.com/ndxbxrme/vidz",
   "devDependencies": {
     "electron": "^1.8.4",
+    "electron-builder": "^20.10.0",
     "grunt": "^1.0.2",
     "grunt-cli": "^1.2.0",
     "grunt-contrib-clean": "^1.1.0",
     "grunt-contrib-coffee": "^2.0.0",
+    "grunt-contrib-copy": "^1.0.0",
     "grunt-contrib-nodeunit": "^1.0.0",
     "grunt-contrib-pug": "^1.0.0",
     "grunt-contrib-watch": "^1.0.1",
