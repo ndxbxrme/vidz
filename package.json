@@ -1,6 +1,6 @@
 {
   "name": "vidz",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "testing electron with youtube and twitch",
   "main": "app/main.js",
   "scripts": {
