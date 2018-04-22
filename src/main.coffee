@@ -61,7 +61,6 @@ createWindow = ->
   mainWindow.loadURL 'https://www.youtube.com/feed/subscriptions'
   mainWindow.on 'closed', ->
     mainWindow = null
-  mainWindow.openDevTools()
   #mainWindow.webContents.on 'did-finish-load', (event) ->
   #  console.log 'hi', mainWindow.webContents.getURL()
 app.on 'ready', createWindow

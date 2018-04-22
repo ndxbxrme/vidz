@@ -85,10 +85,9 @@
       autoHideMenuBar: true
     });
     mainWindow.loadURL('https://www.youtube.com/feed/subscriptions');
-    mainWindow.on('closed', function() {
+    return mainWindow.on('closed', function() {
       return mainWindow = null;
     });
-    return mainWindow.openDevTools();
   };
 
   //mainWindow.webContents.on 'did-finish-load', (event) ->
