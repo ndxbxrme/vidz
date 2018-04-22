@@ -1,4 +1,6 @@
 directories:
   output: dist
   buildResources: build
+appId: com.ndxbxrme.vidz
+productName: Vidz
 electronVersion: 1.8.4
