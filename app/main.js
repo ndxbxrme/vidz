@@ -6,8 +6,6 @@
 
   ({autoUpdater} = require('electron-updater'));
 
-  console.log('auto updater', autoUpdater);
-
   autoUpdater.on('checking-for-update', function() {
     return console.log('checking for update');
   });
@@ -78,9 +76,10 @@
       autoHideMenuBar: true
     });
     mainWindow.loadURL('https://www.youtube.com/feed/subscriptions');
-    return mainWindow.on('closed', function() {
+    mainWindow.on('closed', function() {
       return mainWindow = null;
     });
+    return mainWindow.openDevTools();
   };
 
   //mainWindow.webContents.on 'did-finish-load', (event) ->

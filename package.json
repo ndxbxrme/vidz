@@ -1,11 +1,11 @@
 {
   "name": "vidz",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "testing electron with youtube and twitch",
   "main": "app/main.js",
   "scripts": {
     "start": "electron .",
-    "publish": "build --win -p always"
+    "pack": "build --win -p always"
   },
   "build": {
     "appId": "com.ndxbxrme.vidz",

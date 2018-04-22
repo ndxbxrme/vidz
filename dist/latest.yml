@@ -1,9 +1,9 @@
-version: 0.0.3
+version: 0.0.4
 files:
-  - url: vidz-setup-0.0.3.exe
-    sha512: 3j+q4bWtfTsz8dNA7PC5IAFf/7eHgR+OT+7aQ8c0UEadexeAADQIgFWA8ATX32GZxndXit88j6IlKFEjy1Wbvg==
-    size: 35938617
-path: vidz-setup-0.0.3.exe
-sha512: 3j+q4bWtfTsz8dNA7PC5IAFf/7eHgR+OT+7aQ8c0UEadexeAADQIgFWA8ATX32GZxndXit88j6IlKFEjy1Wbvg==
-sha2: ce7e68e206b7c978e572081c9977a1ef3e6ba15512c7dd60788128d7c2bcfe37
-releaseDate: '2018-04-22T09:46:10.653Z'
+  - url: vidz-setup-0.0.4.exe
+    sha512: E9Ywo/3Nth27seaFEziLKgd9a0yp/LPpDPSBhvp3gzhHqEb2nmxxJW8CzN3Fv3ccJsstBOwH/15DbyqIvep9Yw==
+    size: 35938631
+path: vidz-setup-0.0.4.exe
+sha512: E9Ywo/3Nth27seaFEziLKgd9a0yp/LPpDPSBhvp3gzhHqEb2nmxxJW8CzN3Fv3ccJsstBOwH/15DbyqIvep9Yw==
+sha2: 832fa47aed1a297bd2a54e21afb01a8086801e675ba68cb87f77ff1b7f2426cd
+releaseDate: '2018-04-22T09:56:12.871Z'
