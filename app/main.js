@@ -1,8 +1,36 @@
 (function() {
   'use strict';
-  var BrowserWindow, app, createWindow, globalShortcut, mainWindow, session, tests;
+  var BrowserWindow, app, autoUpdater, createWindow, globalShortcut, mainWindow, session, tests;
 
   ({app, BrowserWindow, globalShortcut, session} = require('electron'));
+
+  ({autoUpdater} = require('electron-updater'));
+
+  console.log('auto updater', autoUpdater);
+
+  autoUpdater.on('checking-for-update', function() {
+    return console.log('checking for update');
+  });
+
+  autoUpdater.on('update-available', function() {
+    return console.log('update-available');
+  });
+
+  autoUpdater.on('update-not-available', function() {
+    return console.log('update-not-available');
+  });
+
+  autoUpdater.on('error', function() {
+    return console.log('error');
+  });
+
+  autoUpdater.on('download-progress', function() {
+    return console.log('download-progress');
+  });
+
+  autoUpdater.on('update-downloaded', function() {
+    return console.log('update-downloaded');
+  });
 
   mainWindow = null;
 
